@@ -57,4 +57,16 @@ def get_by_id_dy(id: int):
 # This works by list position, not actual product ID.
 # It can fail if the requested position is outside the list.
 
+# 3. Dynamic path using the actual product ID
+@app.get("/product/{id}")
+def get_product_by_id(id: int):
+    for product in products:
+        if product.id == id:
+            return product
+
+    return f"Product {id}: Not Found"
+
+
+# The loop checks each product's actual ID.
+# If no product matches, the not-found message is returned.
 
