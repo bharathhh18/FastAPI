@@ -70,3 +70,20 @@ def get_product_by_id(id: int):
 # The loop checks each product's actual ID.
 # If no product matches, the not-found message is returned.
 
+#Update list but put command
+@app.put("/products")
+def update_product(id:int,Product:product):
+    for i in range(len(products)):
+        if products[i].id==id:
+            products[i]=Product
+            return "Product added successfully"
+    return "Product not found"
+
+#Deleting a product using its ID
+@app.delete("/products")
+def delete_product(id:int):
+    for i in range(len(products)):
+        if products[i].id==id:
+            del products[i]
+            return "Product deleted successfully"
+    return "Product not found"
