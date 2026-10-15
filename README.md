@@ -1,73 +1,79 @@
-# 🚀 FastAPI Learning Journey
+# ⚡ FastAPI Product API
 
-### *Learning by building. Improving by debugging.*
+A REST API built with **Python and FastAPI** to explore backend development, HTTP methods, routing, and product data management.
 
-Welcome to my FastAPI learning repository! 👋
+## 📌 Overview
 
-This repository documents my journey of learning **FastAPI and backend development with Python**, with practical examples, experiments, and notes from my learning process.
+This project implements a product API with endpoints to retrieve product information and fetch the complete product collection. It focuses on API design, request handling, and working with structured product data.
 
-## 📚 What I'm Learning
+## ✨ Features
 
-- ⚡ Creating a FastAPI application
-- 🌐 Building GET endpoints
-- 📦 Fetching all products
-- 🔍 Retrieving individual products
-- 🛣️ Understanding fixed and dynamic paths
-- 🆔 Searching using actual product IDs
-- ⚠️ Handling products that are not found
+- 📦 Retrieve all available products.
+- 🔍 Fetch individual products using their IDs.
+- 🛣️ Implement fixed and dynamic API routes.
+- ⚠️ Handle requests for products that do not exist.
+- 🧩 Define structured product models using Python.
+- 🧪 Test endpoints using interactive API documentation.
 
 ## 🛠️ Tech Stack
 
-- 🐍 Python
-- ⚡ FastAPI
-- 🚀 Uvicorn
-- 📝 VS Code
+- 🐍 **Python** — Core programming language
+- ⚡ **FastAPI** — API development framework
+- 🚀 **Uvicorn** — ASGI server
+- 💻 **VS Code** — Development environment
 
 ## 📂 Project Structure
 
 ```text
 FastapiTelusko/
-├── main.py
-├── models.py
-├── NOTES.md
-└── README.md
+├── main.py       # API routes and application logic
+├── models.py     # Product data model
+├── NOTES.md      # Technical notes and explanations
+└── README.md     # Project documentation
 ```
 
-| File | Purpose |
-|---|---|
-| `main.py` | FastAPI application and GET endpoints |
-| `models.py` | Product model definition |
-| `NOTES.md` | Detailed explanations of the code and concepts |
-| `README.md` | Repository overview |
+## 🚀 Getting Started
 
-## ▶️ How to Run
-
-**1. Install the dependencies**
+### 1️⃣ Install Dependencies
 
 ```bash
 pip install fastapi uvicorn
 ```
 
-**2. Start the development server**
+### 2️⃣ Start the Development Server
 
 ```bash
 python -m uvicorn main:app --reload
 ```
 
-**3. Explore the API**
+### 3️⃣ Explore the API
 
-Open `http://127.0.0.1:8000/docs` in your browser to test the available endpoints.
+Open the following URLs in your browser:
 
-## 💡 What This Project Teaches
+- 📖 **Interactive API Docs:** http://127.0.0.1:8000/docs
+- 🌐 **Local Server:** http://127.0.0.1:8000
 
-One important concept explored in this project is the difference between a **list index and a product ID**.
+Use the interactive documentation to test the available endpoints.
 
-The product IDs are intentionally non-sequential, helping demonstrate why searching by the actual ID is different from accessing an item by its list position.
+## 🔗 API Endpoints
 
-## 📈 Learning in Progress
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/products` | Retrieve all products |
+| `GET` | `/products/{id}` | Retrieve a product by ID |
 
-This repository is part of my ongoing backend development learning journey. I'll continue adding concepts and practical examples as I progress.
+## 📈 What's Next?
+
+This project is a foundation for exploring REST API development with FastAPI. Future improvements will include:
+
+- ➕ Creating products using `POST`
+- ✏️ Updating products using `PUT`
+- 🗑️ Deleting products using `DELETE`
+- 🗄️ Integrating a database for persistent storage
+- ✅ Improving request validation and error handling
 
 ---
 
-⭐ *Small projects. Strong fundamentals. Consistent progress.*
+🚧 **Status:** Actively learning and developing.
+
+⭐ *Building practical projects. Strengthening backend fundamentals.*
