@@ -157,3 +157,56 @@ Open these URLs:
 - Index identifies an item's position in a list.
 - ID identifies the product itself.
 - Searching by the actual ID works even when IDs are non-sequential.
+
+10. PUT — Update a Product
+
+@app.put("/products")
+def update_product(id: int, Product: product):
+    for i in range(len(products)):
+        if products[i].id == id:
+            products[i] = Product
+            return "Product updated successfully"
+
+    return "Product not found"
+
+- "@app.put()" — Updates an existing product.
+- "id: int" — Receives the product ID through a query parameter.
+- "Product: product" — Receives new product details in the request body.
+- "products[i].id == id" — Checks whether the product ID matches.
+- "products[i] = Product" — Replaces the entire product.
+- "return" — Stops function execution.
+- If no match is found, returns ""Product not found"".
+
+11. DELETE — Delete a Product
+
+@app.delete("/products")
+def delete_product(id: int):
+    for i in range(len(products)):
+        if products[i].id == id:
+            del products[i]
+            return "Product deleted successfully"
+
+    return "Product not found"
+
+- "@app.delete()" — Deletes an existing product.
+- "id: int" — Receives the product ID.
+- "products[i].id == id" — Checks whether the product exists.
+- "del products[i]" — Removes the product from the list.
+- If no match is found, returns ""Product not found"".
+
+3. Important Concepts
+
+- "products" — List containing product objects.
+- "products[i]" — Accesses a product using its index.
+- "products[i].id" — Accesses the product's ID.
+- "range(len(products))" — Generates the list indexes.
+- "return" — Immediately exits the function.
+- In-memory list: Data is lost when the server restarts.
+
+Quick Revision
+
+Method| Purpose
+GET| Retrieve data
+POST| Add data
+PUT| Update/replace data
+DELETE| Remove data
